@@ -2,14 +2,28 @@ import React from 'react';
 import './App.css';
 import { SearchBar } from './SearchBar';
 import { SearchResults } from './SearchResults';
+import { apiService } from './apiService';
+import { UiRepo } from './intrefaces/UiRepo';
 
 function App() {
+  const [repos, setRepos] = React.useState<UiRepo[]>([]);
   const [searchInput, setSearchInput] = React.useState('');
+
+  React.useEffect(() => {
+    if (!searchInput) {
+      return;
+    }
+    apiService.getRepos(searchInput).then(r => setRepos(r.uiRepos));
+  }, [searchInput])
 
   return (
     <div className="App">
       <SearchBar onChange={setSearchInput} value={searchInput}/>
-      <SearchResults/>
+      {
+        searchInput && (
+          <SearchResults repos={repos}/>
+        )
+      }
     </div>
   );
 }

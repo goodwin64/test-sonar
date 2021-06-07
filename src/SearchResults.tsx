@@ -1,5 +1,20 @@
 import React from 'react';
+import { UiRepo } from './intrefaces/UiRepo';
 
-export function SearchResults() {
-  return <div>search results</div>
+interface Props {
+  repos: UiRepo[]
+}
+
+export function SearchResults(props: Props) {
+  return <div className={'SearchResultsList'}>
+    {
+      props.repos.map(repo => (
+        <div key={repo.name} className={'SearchResultsItem'}>
+          <img src={repo.logoUrl} alt="" />
+          <p>{repo.name} ⭐ {repo.stars}</p>
+          <p>{repo.description}</p>
+        </div>
+      ))
+    }
+  </div>;
 }

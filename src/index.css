@@ -5,9 +5,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eee;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.SearchBar {
+  margin-bottom: 40px;
+}
+
+.SearchResultsList {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 720px;
+  margin: auto;
+}
+
+.SearchResultsItem {
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.SearchResultsLogo {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }

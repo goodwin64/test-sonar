@@ -6,5 +6,12 @@ interface Props {
 }
 
 export function SearchBar(props: Props) {
-  return <input type="text" value={props.value} onChange={(e) => props.onChange(e.target.value)} />;
+  return (
+    <input
+      type="search"
+      value={props.value}
+      onChange={(e) => props.onChange(e.target.value)}
+      className={'SearchBar'}
+    />
+  );
 }
