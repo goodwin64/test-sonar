@@ -17,7 +17,7 @@ function App() {
   }, [searchInput])
 
   return (
-    <div className="App">
+    <div className="AppWrapper">
       <SearchBar onChange={setSearchInput} value={searchInput}/>
       {
         searchInput && (
