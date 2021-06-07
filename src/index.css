@@ -57,3 +57,20 @@ code {
 .SearchResultsItem > p {
   margin-bottom: 0;
 }
+
+.SearchPagination {
+  display: flex;
+  align-items: center;
+}
+
+.SearchPaginationInfo {
+  margin-right: 20px;
+}
+
+.SearchPaginationNextPage {
+  border-radius: 2px;
+  background-color: #5371cb;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
