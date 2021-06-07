@@ -9,7 +9,7 @@ export const apiService = {
           name: repo.full_name,
           description: repo.description,
           logoUrl: '',
-          stars: repo.score,
+          stars: repo.stargazers_count,
         }));
         return { total: r.total_count, uiRepos };
       })
