@@ -40,7 +40,9 @@ function App() {
   }, [searchInput, pagination.page]);
 
   React.useEffect(() => {
-    setPagination(defaultPagination);
+    if (!searchInput) {
+      setPagination(defaultPagination);
+    }
   }, [searchInput]);
 
   return (
