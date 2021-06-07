@@ -11,7 +11,7 @@ export function SearchResults(props: Props) {
       props.repos.map(repo => (
         <div key={repo.name} className={'SearchResultsItem'}>
           <div className="SearchResultsHeading">
-            <img src={repo.logoUrl} alt="" />
+            <img src={repo.logoUrl} alt="" className={'SearchResultsLogo'} />
             <p>{repo.name}</p>
             <span>⭐ {repo.stars}</span>
           </div>

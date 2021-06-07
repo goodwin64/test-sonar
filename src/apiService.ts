@@ -8,7 +8,7 @@ export const apiService = {
         const uiRepos: UiRepo[] = r.items.map((repo: any) => ({
           name: repo.full_name,
           description: repo.description,
-          logoUrl: '',
+          logoUrl: repo.owner.avatar_url,
           stars: repo.stargazers_count,
         }));
         return { total: r.total_count, uiRepos };
