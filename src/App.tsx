@@ -47,11 +47,8 @@ function App() {
     <div className="AppWrapper">
       <SearchBar onChange={setSearchInput} value={searchInput} />
       {
-        isLoading && 'Loading...'
-      }
-      {
         pagination.noResults ? 'Nothing found' : (
-          <SearchResults repos={repos} pagination={pagination} setPagination={setPagination} />
+          <SearchResults repos={repos} pagination={pagination} setPagination={setPagination} isLoading={isLoading} />
         )
       }
     </div>

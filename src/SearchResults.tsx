@@ -6,12 +6,13 @@ interface Props {
   repos: UiRepo[];
   pagination: UiPagination;
   setPagination: (pagination: UiPagination) => void;
+  isLoading: boolean;
 }
 
 export function SearchResults(props: Props) {
   const navigateForwardDisabled = React.useMemo(() => {
     return props.pagination.page >= props.pagination.totalPages;
-  }, [props.pagination])
+  }, [props.pagination]);
   const loadMore = React.useCallback(() => {
     if (navigateForwardDisabled) {
       return;
@@ -19,7 +20,7 @@ export function SearchResults(props: Props) {
     props.setPagination({
       ...props.pagination,
       page: props.pagination.page + 1,
-    })
+    });
   }, [props.setPagination, props.pagination]);
 
   return <div className={'SearchResultsList'}>
@@ -34,6 +35,9 @@ export function SearchResults(props: Props) {
           <p>{repo.description}</p>
         </div>
       ))
+    }
+    {
+      props.isLoading && 'Loading...'
     }
     {
       props.repos.length > 0 && (
